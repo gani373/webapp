@@ -53,6 +53,7 @@ def authorized():
         request.args['code'],
         scopes=Config.SCOPE,
         redirect_uri=url_for('authorized', _external=True, _scheme='https'))
+        print("DEBUG TOKEN RESULT:", result)
         #  And replace the error dictionary
         if 'error' in result:
             return render_template('auth_error.html', result=result)
