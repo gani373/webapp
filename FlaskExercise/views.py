@@ -54,7 +54,6 @@ def authorized():
         scopes=Config.SCOPE,
         redirect_uri=url_for('authorized', _external=True, _scheme='https'))
         #  And replace the error dictionary
-        result = {'error': 'Not Implemented', 'error_description': 'Function not implemented.'}
         if 'error' in result:
             return render_template('auth_error.html', result=result)
         session['user'] = result.get('id_token_claims')
